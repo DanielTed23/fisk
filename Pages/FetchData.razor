@@ -1,0 +1,39 @@
+﻿@page "/fetchdata"
+
+<PageTitle>Fisk</PageTitle>
+@using H1AfsluttendeOpgaveSuperVigtig.Data
+
+<h1>Fisk</h1>
+
+
+@if (fishList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+              
+                <th>Navn</th>
+                <th>Farve</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Fish fish in fishList)
+            {
+                <tr>
+             
+                    
+                    <td>@fish.Navn</td>
+                    <td>@fish.Farve</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Fish> fishList = new SQL().ReadFish();
+}

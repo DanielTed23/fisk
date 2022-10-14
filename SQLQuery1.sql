@@ -1,0 +1,22 @@
+﻿USE Master
+GO	
+IF DB_ID('UNILOGIN') IS NOT NULL
+	BEGIN
+ALTER DATABASE FISKKK SET SINGLE_USER
+DROP DATABASE FISKKK
+	END
+CREATE DATABASE FISKKK
+GO
+USE FISKKK
+GO
+
+CREATE TABLE FISH(
+Navn nvarchar (50) ,
+Farve nvarchar (15) 
+)
+
+INSERT INTO Fish (Navn, Farve)
+VALUES ('Torsk', 'Rød')
+
+INSERT INTO Fish (Navn,Farve)
+VALUES ('Goldfish', 'Green')
